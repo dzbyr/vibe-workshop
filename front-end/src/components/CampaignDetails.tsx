@@ -121,14 +121,20 @@ export default function CampaignDetails({
   return (
     <Container maxW="container.xl" py="8">
       <Flex direction="column" gap="6">
-        <Flex direction="column" gap="1">
-          <Heading>{CAMPAIGN_TITLE}</Heading>
-          <Text>{CAMPAIGN_SUBTITLE}</Text>
-        </Flex>
+        <Box className="wildlife-hero">
+          <Heading size="xl" color="white">{CAMPAIGN_TITLE}</Heading>
+          <Text fontSize="lg" color="white" mt="2">{CAMPAIGN_SUBTITLE}</Text>
+          <Flex mt="4" gap="2" flexWrap="wrap">
+            <span className="species-badge">Wild Ducks</span>
+            <span className="species-badge">Rainbow Trout</span>
+            <span className="species-badge">Sea Otters</span>
+            <span className="species-badge">River Birds</span>
+          </Flex>
+        </Box>
 
         <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={8} alignItems="start">
           {/* Left column: Image carousel */}
-          <Box position="relative" width="full" overflow="hidden">
+          <Box position="relative" width="full" overflow="hidden" className="wildlife-gallery">
             <Flex width={slideSize} mx="auto" position="relative">
               <Image
                 src={images[currentIndex]}
@@ -186,7 +192,7 @@ export default function CampaignDetails({
                 campaignIsWithdrawn={!!campaignInfo?.isWithdrawn}
               />
             ) : null}
-            <Box p={6} borderRadius="lg" borderWidth="1px">
+            <Box p={6} borderRadius="lg" borderWidth="1px" className="conservation-card">
               {campaignIsUninitialized ? (
                 <Flex direction="column" gap="4">
                   This campaign hasn&apos;t started yet!
@@ -267,8 +273,8 @@ export default function CampaignDetails({
                     <Progress
                       value={progress}
                       size="lg"
-                      colorScheme="green"
                       borderRadius="full"
+                      className="funding-progress"
                     />
                   </Box>
 
@@ -321,13 +327,13 @@ export default function CampaignDetails({
                     <Flex direction="column" gap="4">
                       <Button
                         size="lg"
-                        colorScheme="green"
+                        variant="conservation"
                         width="full"
                         onClick={() => {
                           setIsDonationModalOpen(true);
                         }}
                       >
-                        Contribute Now
+                        Support Conservation
                       </Button>
                       <Box fontSize="xs">
                         <Box mb="2">

@@ -125,10 +125,10 @@ export default function DonationModal({
 
       const doSuccessToast = (txid: string) => {
         toast({
-          title: "Thank you!",
+          title: "Thank you for protecting wildlife! 🌊🦆",
           description: (
             <Flex direction="column" gap="4">
-              <Box>Processing donation of ${amount}.</Box>
+              <Box>Processing your conservation contribution of ${amount}. Your support helps protect river ecosystems and endangered species.</Box>
               <Box fontSize="xs">
                 Transaction ID: <strong>{txid}</strong>
               </Box>
@@ -179,7 +179,7 @@ export default function DonationModal({
     <Modal isOpen={isOpen} onClose={onClose} size="full">
       <ModalOverlay />
       <ModalContent>
-        <ModalHeader>Make a Contribution</ModalHeader>
+        <ModalHeader>Support Wildlife Conservation</ModalHeader>
         <ModalCloseButton />
         <ModalBody pb="8">
           <Flex direction="column" gap="3">
@@ -193,7 +193,7 @@ export default function DonationModal({
                 direction="column"
                 gap="4"
               >
-                <Box>Please connect a STX wallet to make a contribution.</Box>
+                <Box>Please connect a STX wallet to support wildlife conservation.</Box>
                 {isDevnetEnvironment() ? (
                   <DevnetWalletButton
                     currentWallet={devnetWallet}
@@ -250,7 +250,7 @@ export default function DonationModal({
                     </RadioGroup>
 
                     <Text fontSize="lg" fontWeight="bold">
-                      Choose Contribution Amount
+                      Choose Your Conservation Contribution
                     </Text>
 
                     <HStack spacing={4} justify="center" wrap="wrap">
@@ -293,7 +293,7 @@ export default function DonationModal({
                         }
                         isLoading={isLoading}
                       >
-                        Donate ${selectedAmount || customAmount || "0"}
+                        Protect Wildlife ${selectedAmount || customAmount || "0"}
                       </Button>
                       <Box mx="auto" fontSize="sm" fontWeight="bold">
                         (≈

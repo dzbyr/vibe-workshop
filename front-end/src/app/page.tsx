@@ -4,7 +4,15 @@ import path from "path";
 
 async function getData() {
   const campaignDir = path.join(process.cwd(), "public/campaign");
-  const imageFiles = await fs.readdir(campaignDir);
+  const allFiles = await fs.readdir(campaignDir);
+  
+  // Filter for image files only (jpg, jpeg, png, svg, webp)
+  const imageExtensions = ['.jpg', '.jpeg', '.png', '.svg', '.webp', '.gif'];
+  const imageFiles = allFiles.filter(file => {
+    const ext = path.extname(file).toLowerCase();
+    return imageExtensions.includes(ext);
+  });
+  
   const images = imageFiles.map((file) => `/campaign/${file}`);
 
   const markdownPath = path.join(process.cwd(), "public/campaign-details.md");

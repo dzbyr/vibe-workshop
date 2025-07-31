@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Fundraising Campaign",
+  title: "Wildlife Compatible Conservation Project",
   description:
-    "A crypto fundraising campaign accepting donations in STX & sBTC.",
+    "Support river ecosystem–friendly conservation: protect endangered species, fund research, empower youth art, and sustain biodiversity.",
 };
 
 export default function RootLayout({
@@ -27,11 +27,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable}`}
+        style={{
+          background: "linear-gradient(135deg, #81D4FA 0%, #2E7D32 100%)",
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <Providers>
           <>
             <Navbar />
-            {children}
+            <main style={{ flex: 1 }}>{children}</main>
+            <footer
+              style={{
+                background: "rgba(46, 125, 50, 0.95)",
+                color: "#fff",
+                textAlign: "center",
+                padding: "1.5rem 0 1rem 0",
+                fontSize: "1.1rem",
+                letterSpacing: "0.01em",
+              }}
+            >
+              <div><strong>River Wildlife Trust</strong> &mdash; Protecting rivers, wildlife, and our shared future 🦦🌊</div>
+              <div style={{ fontSize: "0.95em", marginTop: "0.5em" }}>
+                © {new Date().getFullYear()} Wildlife Compatible Conservation Project
+              </div>
+            </footer>
           </>
         </Providers>
       </body>

@@ -263,13 +263,30 @@ export default function CampaignDetails({
                     </Stat>
                   </SimpleGrid>
 
-                  <Box>
+                  <Box position="relative">
                     <Progress
                       value={progress}
                       size="lg"
-                      colorScheme="green"
+                      sx={{
+                        '& > div': {
+                          background: 'linear-gradient(90deg, #2E7D32 70%, #81D4FA 100%)',
+                        },
+                      }}
                       borderRadius="full"
                     />
+                    {/* Animal emoji at the end of the progress bar */}
+                    <Box position="absolute" top="-28px" right="0" fontSize="2xl">
+                      🦦
+                    </Box>
+                    {/* Milestone markers */}
+                    <Box position="absolute" top="32px" left="0" width="100%" display="flex" justifyContent="space-between" px={2} fontSize="lg">
+                      <span title="Species Tracker">🐟</span>
+                      <span title="Habitat Mapping">🗺️</span>
+                      <span title="Ranger Patrol">👮</span>
+                      <span title="Field Research">🔬</span>
+                      <span title="Youth Art">🎨</span>
+                      <span title="Outreach">📢</span>
+                    </Box>
                   </Box>
 
                   {campaignIsExpired || campaignIsCancelled ? (

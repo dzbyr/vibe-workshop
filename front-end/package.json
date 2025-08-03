@@ -9,8 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.2.4",
-    "@chakra-ui/react": "^3.23.0",
+    "@chakra-ui/icons": "^2.0.17",
+    "@chakra-ui/react": "^2.10.3",
+    "@chakra-ui/stat": "^2.1.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@stacks/blockchain-api-client": "^7.2.2",

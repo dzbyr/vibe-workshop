@@ -8,6 +8,7 @@
   "dependencies": {
     "@chakra-ui/icons": "^2.2.4",
     "@chakra-ui/react": "^3.23.0",
+    "@chakra-ui/stat": "^2.1.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "framer-motion": "^12.23.12",
@@ -16,5 +17,9 @@
   "devDependencies": {
     "@types/node": "^24.1.0",
     "@types/react": "^19.1.9"
+  },
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0 -p 3000"
   }
 }
+

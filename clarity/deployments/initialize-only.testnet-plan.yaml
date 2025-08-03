@@ -1,0 +1,19 @@
+---
+id: 0
+name: Initialize Conservation Wildlife Project
+network: testnet
+stacks-node: "https://api.testnet.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-call:
+            contract-id: SM3VDXK3WZZSA84XXFKAFAF15NNZX32CTSG82JFQ4.sbtc-registry
+            expected-sender: ST1F7QA2MDF17S807EPA36TSS8AMEFY4KA9TVGWXT
+            method: ininitalize-campaign
+            parameters:
+              - u50000
+              - u0
+            cost: 112090
+      epoch: "3.0"
